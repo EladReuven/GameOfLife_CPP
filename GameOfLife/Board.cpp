@@ -6,12 +6,12 @@
 using namespace std;
 
 
-Board::Board(int newWidth, int newHeight)
+Board::Board(int newWidth, int newHeight, int rounds)
 {
-	gameStarted = false;
 	height = newHeight;
 	width = newWidth;
-	
+	roundsRemaining = rounds;
+
 	//totally not copied random generation stuff
 	random_device rd;
 	mt19937 gen(rd());
@@ -52,8 +52,8 @@ Board::Board(int newWidth, int newHeight)
 
 void Board::Update()
 {
-	cout << round << endl;
-	round--;
+	cout << roundsRemaining << endl;
+	roundsRemaining--;
 
 	//every cell calculate the next state
 	for (int i = 0; i < cells.size(); i++) {
@@ -74,13 +74,7 @@ vector<vector<Cell>> Board::GetCells()
 	return cells;
 }
 
-void Board::StartGame(int rounds)
-{
-	gameStarted = true;
-	round = rounds;
-}
-
 bool Board::EndGame()
 {
-	return round <= 0;
+	return roundsRemaining <= 0;
 }

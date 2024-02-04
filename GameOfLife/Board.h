@@ -9,16 +9,14 @@ class Board
 {
 public:
 
-    Board(int newWidth, int newHeight);
+    Board(int newWidth, int newHeight, int rounds);
     void Update();
-    vector<vector<Cell>> GetCells(); //returns the matrix
-    void StartGame(int rounds);
+    vector<vector<Cell>> GetCells();
     bool EndGame();
 
 private:
     int width;
     int height;
-    int round;
-    bool gameStarted;
+    int roundsRemaining;
     vector<vector<Cell>> cells;
 };

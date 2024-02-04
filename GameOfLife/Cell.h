@@ -13,7 +13,10 @@ public:
     void UpdateState();
 
 private:
+    //true - alive, false - dead
     bool currState;
+    //true - alive, false - dead
     bool nextState;
     vector<Cell*> neighbors;
+    int GetLiveNeighborsCount();
 };

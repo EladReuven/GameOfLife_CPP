@@ -7,12 +7,11 @@ using namespace std;
 
 int main()
 {
-    Board board(10, 10);
+    Board board(10, 10, 3);
     Renderer renderer('*', '-');
-    board.StartGame(10);
     while (!board.EndGame()){
-        board.Update();
         renderer.Print(board.GetCells());
+        board.Update();
     }
     return 0;
 }
