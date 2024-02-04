@@ -52,8 +52,8 @@ Board::Board(int newWidth, int newHeight, int rounds)
 
 void Board::Update()
 {
-	cout << roundsRemaining << endl;
 	roundsRemaining--;
+	cout << roundsRemaining << endl;
 
 	//every cell calculate the next state
 	for (int i = 0; i < cells.size(); i++) {
@@ -67,6 +67,8 @@ void Board::Update()
 			cells[i][j].UpdateState();
 		}
 	}
+	//so user has to press enter before continuing to next function
+	cin.get();
 }
 
 vector<vector<Cell>> Board::GetCells()

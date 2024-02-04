@@ -54,6 +54,7 @@ int Cell::GetLiveNeighborsCount()
 {
 	int liveNeighbors = 0;
 
+	//why everything tru :(
 	for (int i = 0; i < neighbors.size(); i++) {
 		liveNeighbors += neighbors[i]->GetState() ? 1 : 0;
 	}

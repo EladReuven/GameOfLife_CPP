@@ -9,6 +9,7 @@ class Board
 {
 public:
 
+    //width, height, rounds
     Board(int newWidth, int newHeight, int rounds);
     void Update();
     vector<vector<Cell>> GetCells();
